@@ -16,7 +16,9 @@
 
 - (void)taskFinished:(SSTask *)task
 {
-	printf("Task finished with code %d, output: %s, error: %s, description: %s\n",
+	printf(
+		"Task finished with code %d\nstdout:\n%s\nstderr:\n%s"
+		"\ndescription: %s\n----------\n",
 		[task exitStatus],
 		[[[[NSString alloc] initWithData:[[task stdout] readDataToEndOfFile] encoding:NSUTF8StringEncoding] autorelease] UTF8String],
 		[[[[NSString alloc] initWithData:[[task stderr] readDataToEndOfFile] encoding:NSUTF8StringEncoding] autorelease] UTF8String],
