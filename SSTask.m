@@ -30,7 +30,7 @@
 		_exitStatus = 127;
 		[[_stdout fileHandleForWriting] closeFile];
 		[[_stderr fileHandleForWriting] closeFile];
-		[delegate taskFinished:self];
+		[delegate performSelector:@selector(taskFinished:) withObject:self afterDelay:0];
 		return self;
 	}
 	

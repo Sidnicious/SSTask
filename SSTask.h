@@ -36,4 +36,7 @@
 
 - (void) taskFinished: (SSTask*) task;
 
+// Not part of the NSObject protocol but we use it
+- (void) performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;
+
 @end
