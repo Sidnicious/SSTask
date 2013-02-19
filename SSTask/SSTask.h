@@ -21,7 +21,7 @@
 
 - (id) initWithLaunchPath: (NSString*)path arguments: (NSArray*)arguments
 				  timeout: (NSTimeInterval)timeout
-				 delegate: (id<SSTaskDelegate>) delegate
+				 delegate: (NSObject<SSTaskDelegate>*) delegate
 				 userInfo: (NSDictionary*)userInfo;
 
 - (NSFileHandle*) stdin;
@@ -35,8 +35,5 @@
 @protocol SSTaskDelegate <NSObject>
 
 - (void) taskFinished: (SSTask*) task;
-
-// Not part of the NSObject protocol but we use it
-- (void) performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;
 
 @end

@@ -10,7 +10,7 @@
 
 - (id) initWithLaunchPath: (NSString*)path arguments: (NSArray*)arguments
 				  timeout: (NSTimeInterval)timeout
-				 delegate: (id<SSTaskDelegate>) delegate
+				 delegate: (NSObject<SSTaskDelegate>*) delegate
 				 userInfo:(NSDictionary *)userInfo
 {
 	if (!(self = [super init])) return self;
