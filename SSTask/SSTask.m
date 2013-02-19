@@ -44,7 +44,7 @@
 		NSInvocation *timeoutInvocation = [NSInvocation invocationWithMethodSignature:[NSTask instanceMethodSignatureForSelector:@selector(terminate)]];
 		[timeoutInvocation setTarget:_task];
 		[timeoutInvocation setSelector:@selector(terminate)];
-		_timeout = [NSTimer scheduledTimerWithTimeInterval:timeout invocation:timeoutInvocation repeats:NO];
+		_timeout = [[NSTimer scheduledTimerWithTimeInterval:timeout invocation:timeoutInvocation repeats:NO] retain];
 	}
 	
 	return self;
